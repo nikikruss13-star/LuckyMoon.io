@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pr.css" />
+    <link rel="icon" href="img/a.png">
+    <title>LUCKY MOOON</title>
+</head>
+
+<body>
+    <audio id="spinSound" src="mp3/s1.mp3" preload="auto"></audio>
+
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="logo-container">
+                    <h1 class="logo">LUCKY</h1>
+                    <h1 class="logo1">MOOON</h1>
+                </div>
+                <div class="user-panel">
+                    <div class="balance">Баланс: <span id="balance">1000</span>$</div>
+                    <button class="trigger" id="depositBtn" onclick="balance1()">Пополнить за рекламу</button>
+
+                    <div class="modal">
+    <div class="modal-content">
+        <span class="close-button">×</span>
+        <a href="#" target="_blank" onclick="toggleModal()">
+            <img src="img/BIY.gif" alt="gif">
+        </a>
+    </div>
+</div>
+
+<div class="modal1">
+    <div class="modal1-content">
+        <span class="close-button1">×</span>
+        <a href="https://viteaaa.github.io/univercity_project/" target="_blank" onclick="toggleModal()">
+            <img src="img/human-torch-chris-evans.gif" alt="gif">
+        </a>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </header>
+        
+        <div class="warning">
+            <h2>ВНИМАНИЕ!</h2>
+            <p>Это демонстрационная страница виртуального казино, созданная в образовательных целях.</p>
+            <p>Здесь нельзя делать реальные ставки или выиграть реальные деньги.</p>
+        </div>
+
+
+
+        <div id="resultMessage" style="margin-top: 20px; font-weight: bold; text-align: center; font-size: 30px "></div>
+
+         <h2 class="other-games-title">Другие игры</h2>
+        <a href="cost.html">
+            <div class="game-card">
+                <div class="game-img">Покер</div>
+                <div class="game-info">
+                    <h3 class="game-title">Состовляй комбинации</h3>
+                    <p class="game-desc">Проверьте свою удачу</p>
+                    <button class="btn play-btn" onclick="clickst()" >Играть</button>
+                </div>
+            </div>
+        </a>
+
+        <a href="rul.html">
+                <div class="game-card">
+                    <div class="game-img">Слоты</div>
+                    <div class="game-info">
+                        <h3 class="game-title">Крутите слоты</h3>
+                        <p class="game-desc">Проверьте свою удачу</p>
+                        <button class="btn play-btn" onclick="clickpr()">Играть</button>
+                    </div>
+                </div>
+            </a>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2025 LUCKY MOOON. Демонстрационный проект.</p>
+        </div>
+    </footer>
+
+<script>
+    // Инициализация баланса при загрузке страницы
+    document.addEventListener('DOMContentLoaded', function() {
+        if (typeof balanceManager !== 'undefined') {
+            balanceManager.updateAllBalances();
+        }
+    });
+</script>
+
+    <script src="js/pr.js"></script>
+    <script src="js/balanceManager.js"></script>
+
+
+</body>
+
+</html>
