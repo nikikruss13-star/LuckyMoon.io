@@ -1,7 +1,7 @@
 class SlotMachine {
     constructor() {
         this.symbols = [
-            {symbol: '🍒', weight: 50},
+            {symbol: '🍒', weight: 60},
             {symbol: '🍋', weight: 30},
             {symbol: '🍊', weight: 10},
             {symbol: '🍇', weight: 5},
@@ -219,4 +219,5 @@ document.addEventListener('DOMContentLoaded', function() {
     slotMachine = new SlotMachine();
     // Обновляем отображение баланса при загрузке
     balanceManager.updateAllBalances();
+
 });
