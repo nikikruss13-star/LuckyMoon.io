@@ -1,13 +1,13 @@
 class SlotMachine {
     constructor() {
         this.symbols = [
-            {symbol: '🍒', weight: 45},
-            {symbol: '🍋', weight: 30},
-            {symbol: '🍊', weight: 25},
-            {symbol: '🍇', weight: 20},
-            {symbol: '🔔', weight: 15},
-            {symbol: '💎', weight: 10},
-            {symbol: '7', weight: 5}
+            {symbol: '🍒', weight: 7},
+            {symbol: '🍋', weight: 6},
+            {symbol: '🍊', weight: 5},
+            {symbol: '🍇', weight: 4},
+            {symbol: '🔔', weight: 3},
+            {symbol: '💎', weight: 2},
+            {symbol: '7', weight: 1}
         ];
         
         this.reels = [
@@ -96,7 +96,6 @@ class SlotMachine {
             return;
         }
         
-        // Вычитаем ставку
         balanceManager.subtractFromBalance(bet);
         
         // Звук и блокировка кнопки
@@ -105,7 +104,6 @@ class SlotMachine {
         spinBtn.disabled = true;
         resultMessage.textContent = "";
         
-        // Генерируем финальные символы
         const finalSymbols = [
             this.getWeightedRandomElement(),
             this.getWeightedRandomElement(),
@@ -149,25 +147,25 @@ class SlotMachine {
         
         // Проверяем комбинации
         if (symbols[0] === '7' && symbols[1] === '7' && symbols[2] === '7') {
-            winMultiplier = 30000;
+            winMultiplier = 70;
             winMessage = "ДЖЕКПОТ! 777!";
         } else if (symbols[0] === '💎' && symbols[1] === '💎' && symbols[2] === '💎') {
-            winMultiplier = 3000;
+            winMultiplier = 60;
             winMessage = "Бриллианты!";
         } else if (symbols[0] === '🔔' && symbols[1] === '🔔' && symbols[2] === '🔔') {
-            winMultiplier = 1000;
+            winMultiplier = 50;
             winMessage = "Колокольчики!";
         } else if (symbols[0] === '🍇' && symbols[1] === '🍇' && symbols[2] === '🍇') {
-            winMultiplier = 400;
+            winMultiplier = 40;
             winMessage = "Виноград!";
         } else if (symbols[0] === '🍊' && symbols[1] === '🍊' && symbols[2] === '🍊') {
-            winMultiplier = 250;
+            winMultiplier = 30;
             winMessage = "Апельсины!";
         } else if (symbols[0] === '🍋' && symbols[1] === '🍋' && symbols[2] === '🍋') {
-            winMultiplier = 120;
+            winMultiplier = 20;
             winMessage = "Лимоны!";
         } else if (symbols[0] === '🍒' && symbols[1] === '🍒' && symbols[2] === '🍒') {
-            winMultiplier = 30;
+            winMultiplier = 10;
             winMessage = "Вишни!";
         }
         
@@ -219,4 +217,5 @@ document.addEventListener('DOMContentLoaded', function() {
     slotMachine = new SlotMachine();
     // Обновляем отображение баланса при загрузке
     balanceManager.updateAllBalances();
+
 });
